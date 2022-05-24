@@ -1,0 +1,9 @@
+image: ghcr.io/capuanob/libpostal-fuzz:latest
+project: libpostal
+target: libpostal-fuzz
+tests:
+  - file://fuzz/corpus
+
+cmds:
+  - cmd: /postal-fuzz -close_fd_mask=2
+    libfuzzer: true
